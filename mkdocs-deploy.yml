@@ -12,8 +12,8 @@ nav:
   - Home: docs/index.md
   - Create Custom Q Application: docs/create-custom-q-app.md
   - Create Jira Data Source: docs/create-data-connection-with-jira.md
-  - Create App in Jira for Auth: create-jira-app-oath/index.html
-  - Launch and Test: launch-and-test/index.html
+  - Create App in Jira for Auth: create-jira-app-oath.md
+  - Launch and Test: launch-and-test.md
 
 theme:
   name: material
