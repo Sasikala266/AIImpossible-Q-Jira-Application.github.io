@@ -1,56 +1,17 @@
-name: MkDocs build & deploy
+site_name: "Custom Q App with Jira Plugin"
+site_description: "Documentation for the Custom Q App with Jira Plugin"
+# docs_dir defaults to "docs"; keep docs in /docs folder as used below
+nav:
+  - Home: index.md
+  - Create Custom Q Application: docs/create-custom-q-app.md
+  - Create Jira Data Source: docs/create-data-connection-with-jira.md
+  - Create App in Jira for Auth: docs/create-jira-app-oath.md
+  - Launch and Test: launch-and-test
 
-on:
-  push:
-    branches: ["gh-pages"]
-  pull_request:
-    branches: ["gh-pages"]
+theme:
+  name: material
+  # remove theme if you don't use mkdocs-material; adjust as needed
 
-jobs:
-  build:
-    name: Build MkDocs (strict)
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; else pip install mkdocs mkdocs-material; fi
-
-      - name: Build MkDocs site (strict)
-        run: mkdocs build --clean --strict
-
-  deploy:
-    name: Deploy to GitHub Pages
-    needs: build
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; else pip install mkdocs mkdocs-material; fi
-
-      - name: Build MkDocs site
-        run: mkdocs build --clean
-
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GH_PAGES_PAT}}
-          publish_dir: ./site
+# If you use plugins or extra requirements, add them here and add to requirements.txt
+# plugins:
+#   - search
