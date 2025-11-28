@@ -15,6 +15,15 @@ theme:
 
   # remove theme if you don't use mkdocs-material; adjust as needed
 
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: pink
+  font:
+    text: Roboto
+    code: Roboto Mono
+
 # If you use plugins or extra requirements, add them here and add to requirements.txt
-# plugins:
-#   - search
+plugins:
+  - search
