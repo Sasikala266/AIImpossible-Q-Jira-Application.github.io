@@ -2,10 +2,10 @@ site_name: "Custom Q App with Jira Plugin"
 site_description: "Documentation for the Custom Q App with Jira Plugin"
 # docs_dir defaults to "docs"; keep docs in /docs folder as used below
 nav:
-  - Home: index.md
+  - Home: index.html
   - Create Custom Q Application: create-custom-q-app.md
   - Create Jira Data Source: create-data-connection-with-jira.md
-  - Create App in Jira for Auth: create-jira-app-oath.md
+  - Create App in Jira for Auth: create-jira-app-oath.html
   - Launch and Test: launch-and-test.md
 
 theme:
