@@ -11,11 +11,6 @@ nav:
   - Launch and Test: launch-and-test.md
 
 theme:
-  name: material   # requires mkdocs-material installed
-
-  # remove theme if you don't use mkdocs-material; adjust as needed
-
-theme:
   name: material
   palette:
     primary: indigo
