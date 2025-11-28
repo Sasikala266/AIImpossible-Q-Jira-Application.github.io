@@ -24,6 +24,9 @@ theme:
     text: Roboto
     code: Roboto Mono
 
+extra_css:
+  - stylesheets/extra.css
+
 # If you use plugins or extra requirements, add them here and add to requirements.txt
 plugins:
   - search
