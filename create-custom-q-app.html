@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Custom Q App</title>
+</head>
+<body>
+  <h1>1. Create the custom Q app</h1>
+  <p>This page walks through creating a custom Q application (skeleton) that will integrate with Jira.</p>
+
+  <h2>1. Plan the integration</h2>
+  <ul>
+    <li>Decide which Jira operations you need.</li>
+    <li>Choose authentication method: OAuth1, OAuth2, or API token.</li>
+  </ul>
+
+  <h2>2. Create the new app in Q</h2>
+  <ul>
+    <li>Sign in to your Q developer console.</li>
+    <li>Create a new app/project and set redirect URI.</li>
+  </ul>
+
+  <h2>3. App skeleton</h2>
+  <pre>
+git init custom-q-jira-integration
+package.json, src/
+  </pre>
+
+  <h2>4. Secrets and storage</h2>
+  <p>Never store private keys or client secrets in plaintext. Use secret managers.</p>
+
+  <h2>5. Add Jira client code</h2>
+  <ul>
+    <li>createIssue(payload)</li>
+    <li>updateIssue(issueId, payload)</li>
+    <li>deleteIssue(issueId)</li>
+    <li>getIssue(issueId)</li>
+  </ul>
+
+  <h2>6. Local dev notes</h2>
+  <pre>
+JIRA_BASE_URL=https://your-domain.atlassian.net
+JIRA_AUTH_METHOD=oauth2
+JIRA_CLIENT_ID=<client-id>
+JIRA_CLIENT_SECRET=<client-secret>
+CALLBACK_URL=http://localhost:3000/auth/callback
+  </pre>
+
+  <p><a href="create-data-connection-with-jira.html">Next: Create the Jira data connection</a></p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Jira App & OAuth</title>
+</head>
+<body>
+  <h1>3. Create the Jira app & configure OAuth permissions</h1>
+  <p>This document covers the steps to register your Q application in Jira and configure OAuth.</p>
+
+  <h2>A. Jira Cloud — OAuth 2.0 (3LO)</h2>
+  <ul>
+    <li>Create an app in Atlassian Developer Console.</li>
+    <li>Set callback URL and scopes.</li>
+    <li>Save client ID and secret securely.</li>
+  </ul>
+
+  <h2>B. Jira Server / Data Center — OAuth 1.0a with RSA</h2>
+  <ul>
+    <li>Generate RSA keypair.</li>
+    <li>Create Application Link in Jira.</li>
+    <li>Configure consumer key and public key.</li>
+  </ul>
+
+  <h2>C. Test the OAuth setup</h2>
+  <pre>
+curl -H "Authorization: Bearer <access_token>" \
+  "https://your-domain.atlassian.net/rest/api/3/issue/PROJ-1"
+  </pre>
+
+  <p><a href="launch-and-test.html">Next: Launch & Test</a></p>
+</body>
+</html>

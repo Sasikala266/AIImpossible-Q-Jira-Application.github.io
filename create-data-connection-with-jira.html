@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Jira Data Connection</title>
+</head>
+<body>
+  <h1>2. Create the data connection with Jira</h1>
+  <p>This page explains how to configure the data connection between your Q app and Jira.</p>
+
+  <h2>1. Determine Jira endpoint</h2>
+  <p>Cloud: https://your-domain.atlassian.net<br>Server: https://jira.company.internal</p>
+
+  <h2>2. Choose authentication method</h2>
+  <ul>
+    <li>OAuth 1.0a (RSA)</li>
+    <li>OAuth 2.0 (3LO)</li>
+    <li>API Token</li>
+  </ul>
+
+  <h2>3. Configure connection values</h2>
+  <pre>
+JIRA_BASE_URL=https://your-jira-instance
+JIRA_AUTH_METHOD=oauth1
+JIRA_CONSUMER_KEY=your-consumer-key
+JIRA_PRIVATE_KEY_PATH=/secrets/jira_private_key.pem
+  </pre>
+
+  <h2>4. Example REST call</h2>
+  <pre>
+curl -X POST "https://your-domain.atlassian.net/rest/api/3/issue" \
+  -H "Authorization: Bearer <ACCESS_TOKEN>" \
+  -H "Content-Type: application/json" \
+  -d '{ "fields": { "project": {"key":"PROJ"}, "summary":"Test", "issuetype":{"name":"Task"} } }'
+  </pre>
+
+  <p><a href="create-jira-app-oauth.html">Next: Register Jira app & OAuth</a></p>
+</body>
+</html>
